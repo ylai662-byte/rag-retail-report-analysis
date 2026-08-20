@@ -54,6 +54,13 @@ This reduces retrieval noise while preserving relevant evidence for answer gener
 * Streamlit
 * Jupyter Notebook
 
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
+pip install -r requirements.txt
+
 ## Experiments
 
 The project evaluates multiple RAG configurations by varying:
@@ -69,6 +76,24 @@ Answer quality is manually evaluated based on:
 * Grounding
 
 Retrieval quality is also evaluated using **Relevant Chunk Rate**.
+
+```
+
+### 2. Configure the OpenAI API key
+
+Copy `.env.example` to `.env` and replace the placeholder with your OpenAI API key.
+
+```text
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+### 3. Run the Streamlit application
+
+```bash
+streamlit run app.py
+```
+
+The application will open in your browser, where you can upload a retail report, ask business questions, and inspect the retrieved source passages.
 
 ## Key Result
 
