@@ -32,9 +32,9 @@ st.write(
 
 st.caption(
     f"Retrieval configuration: {CHUNK_SIZE}-character chunks, "
-    f"{CHUNK_OVERLAP}-character overlap, Top-K = {TOP_K}."
+    f"{CHUNK_OVERLAP}-character overlap, "
+    "8 candidate chunks → filtered to Top-5 context."
 )
-
 
 # OpenAI API Key
 api_key = st.sidebar.text_input(
