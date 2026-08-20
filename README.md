@@ -68,11 +68,9 @@ pip install -r requirements.txt
 
 ### 2. Configure the OpenAI API key
 
-Copy `.env.example` to `.env` and replace the placeholder with your OpenAI API key.
+The Streamlit application uses a bring-your-own-key (BYOK) setup. Enter your OpenAI API key in the sidebar when running the application.
 
-```text
-OPENAI_API_KEY=your_openai_api_key_here
-```
+The API key is entered at runtime and is not stored in the repository.
 
 ### 3. Run the Streamlit application
 
@@ -133,7 +131,7 @@ The project also investigates:
 
 ## Project File
 
-`RAG_Retail_Report_Analysis.ipynb` — Main notebook containing the complete RAG pipeline, experiments, evaluation, and business analysis.
+`notebooks/RAG_Retail_Report_Analysis.ipynb` — Main notebook containing the complete RAG pipeline, experiments, evaluation, and business analysis.
 
 ## Purpose
 
