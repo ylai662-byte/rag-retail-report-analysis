@@ -86,7 +86,7 @@ def build_rag_components(file_bytes, api_key):
     )
 
     retriever = vectorstore.as_retriever(
-        search_kwargs={"k": TOP_K}
+     search_kwargs={"k": 8}
     )
 
     return documents, chunks, retriever
@@ -147,6 +147,10 @@ Question:
                     # Retrieve only once
                     source_documents = retriever.invoke(question)
 
+                    source_documents = [
+                        doc for doc in source_documents
+                        if len(doc.page_content.strip()) >= 100
+                    ][:TOP_K]
                     context = "\n\n".join(
                         doc.page_content
                         for doc in source_documents
