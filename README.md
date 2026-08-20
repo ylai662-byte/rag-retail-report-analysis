@@ -1,5 +1,9 @@
 # AI-Powered Retail Report Analysis with RAG
 
+🚀 **Live Demo:** [Launch the Streamlit App](https://rag-retail-report-analysis-akfhhamqgjvjmwtdfqqscb.streamlit.app/)
+
+> **Note:** The demo uses a bring-your-own-key (BYOK) setup. Enter your OpenAI API key in the sidebar to run the RAG analysis.
+
 ## Demo
 
 The Streamlit application allows users to upload a retail industry report, ask business questions, and inspect the supporting source passages retrieved by the RAG pipeline.
