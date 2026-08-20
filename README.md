@@ -1,5 +1,11 @@
 # AI-Powered Retail Report Analysis with RAG
 
+## Demo
+
+The Streamlit application allows users to upload a retail industry report, ask business questions, and inspect the supporting source passages retrieved by the RAG pipeline.
+
+![Streamlit RAG Demo](assets/streamlit_demo.png)
+
 ## Overview
 
 This project develops and evaluates a **Retrieval-Augmented Generation (RAG)** system for analyzing retail industry reports.
@@ -26,6 +32,16 @@ The project implements the following workflow:
 6. Provide retrieved evidence to a language model
 7. Generate document-grounded answers
 8. Evaluate retrieval and answer quality
+
+### Retrieval Improvement
+
+To improve retrieval quality, the application retrieves a larger candidate set before constructing the final context:
+
+1. Retrieve the top 8 candidate chunks using semantic similarity.
+2. Remove low-information chunks containing fewer than 100 characters.
+3. Keep the top 5 remaining chunks for the final LLM context.
+
+This reduces retrieval noise while preserving relevant evidence for answer generation.
 
 ## Technologies
 
