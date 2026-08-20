@@ -78,6 +78,12 @@ The experiment also showed that retrieval precision and final answer quality are
 
 This suggests that RAG performance depends on the interaction between chunk size, retrieval depth, and evidence coverage rather than any single parameter.
 
+### Evaluation Visualization
+
+The chart below compares the overall answer-quality scores across the six tested RAG configurations.
+
+![RAG Configuration Evaluation](evaluation/rag_evaluation.png)
+
 ## Additional Experiments
 
 The project also investigates:
