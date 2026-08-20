@@ -60,6 +60,24 @@ This reduces retrieval noise while preserving relevant evidence for answer gener
 
 ```bash
 pip install -r requirements.txt
+```
+
+### 2. Configure the OpenAI API key
+
+Copy `.env.example` to `.env` and replace the placeholder with your OpenAI API key.
+
+```text
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+### 3. Run the Streamlit application
+
+```bash
+streamlit run app.py
+```
+
+
+The application will open in your browser, where you can upload a retail report, ask business questions, and inspect the retrieved source passages.
 
 ## Experiments
 
@@ -77,24 +95,6 @@ Answer quality is manually evaluated based on:
 
 Retrieval quality is also evaluated using **Relevant Chunk Rate**.
 
-```
-
-### 2. Configure the OpenAI API key
-
-Copy `.env.example` to `.env` and replace the placeholder with your OpenAI API key.
-
-```text
-OPENAI_API_KEY=your_openai_api_key_here
-```
-
-### 3. Run the Streamlit application
-
-```bash
-streamlit run app.py
-```
-
-The application will open in your browser, where you can upload a retail report, ask business questions, and inspect the retrieved source passages.
-
 ## Key Result
 
 Among the six tested retrieval configurations, **500-character chunks with Top-K = 5 achieved the highest manual answer-quality score of 9.0/9.0**.
@@ -108,6 +108,16 @@ This suggests that RAG performance depends on the interaction between chunk size
 The chart below compares the overall answer-quality scores across the six tested RAG configurations.
 
 ![RAG Configuration Evaluation](evaluation/rag_evaluation.png)
+
+### Reproduce the Evaluation
+
+The evaluation summary and configuration ranking can be reproduced from the saved results:
+
+```bash
+py evaluation/evaluate.py
+```
+
+The script recalculates the overall answer-quality scores, validates them against the stored results, ranks all tested configurations, and compares answer quality with retrieval precision.
 
 ## Additional Experiments
 
